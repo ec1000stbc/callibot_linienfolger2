@@ -1,3 +1,6 @@
+/**
+ * Beide Sensoren sehen das schwarze Band
+ */
 let speed = 30
 let right = speed
 right = speed - 2
@@ -12,7 +15,7 @@ basic.forever(function () {
         if (input.buttonIsPressed(Button.B)) {
             on = 0
         }
-        while (maqueen.readPatrol(maqueen.Patrol.PatrolLeft, maqueen.Brightness.Bright) && maqueen.readPatrol(maqueen.Patrol.PatrolLeft, maqueen.Brightness.Dark)) {
+        while (maqueen.readPatrol(maqueen.Patrol.PatrolLeft, maqueen.Brightness.Dark) && maqueen.readPatrol(maqueen.Patrol.PatrolRight, maqueen.Brightness.Dark)) {
             maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, speed)
             maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, speed - 2)
         }
